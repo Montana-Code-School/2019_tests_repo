@@ -13,5 +13,13 @@ it('should return an array', function(){
 })
 
 it('if given bad input, return error message', function(){
-  expect(flattenArray()).to.throw(Error, 'bad input!');
+  expect(flattenArray).to.throw(Error, 'bad input!');
+})
+
+it('should flatten an array with one level of nesting', function(){
+  expect(flattenArray(mdArray1Level)).to.be.eql(expectedResult);
+})
+
+it('should flatten an array with many levels of nesting', function(){
+  expect(flattenArray(mdArray)).to.be.eql(expectedResult);
 })
